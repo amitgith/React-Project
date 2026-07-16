@@ -5,7 +5,7 @@ import CartItems from "./components/CartItems";
 
 const App = () => {
   return (
-    <div className="h-screen w-full flex flex-col gap-5 bg-slate-300">
+    <div className=" h-screen flex flex-col gap-5 bg-slate-300">
       <Navbar />
       <div className="flex justify-center gap-5">
         <CreateRecipe />
