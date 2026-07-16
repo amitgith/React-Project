@@ -1,6 +1,6 @@
 import React from "react";
 
-const CartItems = () => {
+const CartItems = ({ users }) => {
   return (
     <div className="bg-white flex flex-col gap-4 p-3 w-240 h-screen rounded">
       <div className="flex flex-col gap-2">
@@ -9,34 +9,43 @@ const CartItems = () => {
           Top curated recipes for your next meal.
         </p>
       </div>
-      <div className="w-100 rounded border border-black">
+      <div className="rounded border border-black ">
         <div className="w-100 flex flex-col gap-4">
           <div className="bg-black">
             <img
               className="w-96 object-cover rounded"
-              src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={users.imageurl}
               alt="Image not found"
             />
           </div>
           <div className="flex justify-between">
-            <h2 className="font-bold text-xl">Recipe Name</h2>
+            <h2 className="font-bold text-xl">{users.recipename}</h2>
             <span className="text-yellow-600">
-              <span>⭐</span>Rating
+              <span>⭐</span>
+              4.5
             </span>
           </div>
           <div>
-            <p className="text-slate-500">Description</p>
+            <p className="text-slate-500">{users.description}</p>
           </div>
           <div className="flex justify-between">
             <div>
-              <p>chefName</p>
-              <p className="text-slate-400 text-sm">PrepTime</p>
+              <p>{users.chefname}</p>
+              <p className="text-slate-400 text-sm">{users.mins}</p>
             </div>
             <div>
               <button className="bg-amber-600 p-2 text-white cursor-pointer rounded">
                 Add to Cart
               </button>
             </div>
+          </div>
+          <div className="flex justify-between">
+            <button className="bg-green-600 p-2 text-white cursor-pointer rounded">
+              Update
+            </button>
+            <button className="bg-red-600 p-2 text-white cursor-pointer rounded">
+              Delete
+            </button>
           </div>
         </div>
       </div>

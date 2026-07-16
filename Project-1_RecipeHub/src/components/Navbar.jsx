@@ -6,7 +6,7 @@ const Navbar = () => {
       <div className="font-bold text-2xl text-amber-600">RecipeHub</div>
       <div className="border border-white">
         <input
-          className="w-100 rounded-2xl p-2 border border-slate-500 text-slate-500"
+          className="w-100 rounded-2xl p-2 border border-slate-500 text-slate-500 outline-0"
           type="text"
           placeholder="Search recipes.."
         />
