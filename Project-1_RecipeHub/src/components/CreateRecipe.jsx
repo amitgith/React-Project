@@ -2,44 +2,74 @@ import React from "react";
 
 const CreateRecipe = () => {
   return (
-    <div>
-      <div>
-        <h2>Add New Recipe</h2>
-        <p>Share your delicious receipe with everyone.</p>
+    <div className=" bg-white p-5 rounded flex flex-col gap-5">
+      <div className="flex flex-col gap-1">
+        <h2 className="text-2xl">Add New Recipe</h2>
+        <p className="text-slate-400">
+          Share your delicious receipe with everyone.
+        </p>
       </div>
-      <div>
-        <div>
+      <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3">
           <label>Recipe Name</label>
-          <input type="text" placeholder="Recipe Name" />
+          <input
+            className="border border-slate-400 rounded p-2"
+            type="text"
+            placeholder="Recipe Name"
+          />
         </div>
-        <div>
+        <div className="flex flex-col gap-3">
           <label>Chef Name</label>
-          <input type="text" placeholder="Chef Name" />
+          <input
+            className="border border-slate-400 rounded p-2"
+            type="text"
+            placeholder="Chef Name"
+          />
         </div>
-        <div>
-          <div>
+        <div className="flex items-center gap-7">
+          <div className="flex flex-col gap-3">
             <label>Price</label>
-            <input type="number" placeholder="Price" />
+            <input
+              className="border border-slate-400 rounded p-2"
+              type="number"
+              placeholder="Price"
+            />
           </div>
-          <div>
+          <div className="flex flex-col gap-3">
             <label>Prep Time</label>
-            <input type="text" placeholder="30 mins" />
+            <input
+              className="border border-slate-400 rounded p-2"
+              type="text"
+              placeholder="30 mins"
+            />
           </div>
         </div>
-        <div>
-          <label>Label</label>
-          <input type="url" placeholder="Paste image URL" />
+        <div className="flex flex-col gap-3">
+          <label>Image URL</label>
+          <input
+            className="border border-slate-400 rounded p-2"
+            type="url"
+            placeholder="Paste image URL"
+          />
         </div>
-        <div>
+        <div className="flex flex-col gap-3">
           <label>Description</label>
-          <textarea placeholder="Description"></textarea>
+          <textarea
+            cols={53}
+            rows={3}
+            className="border border-slate-400 p-2 rounded"
+            placeholder="Description"
+          ></textarea>
         </div>
-        <div>
-          <button>Create Recipe</button>
+        <div className="flex flex-col">
+          <button className="bg-amber-600 p-2 rounded text-white cursor-pointer font-bold">
+            Create Recipe
+          </button>
         </div>
       </div>
     </div>
   );
+  text - white;
 };
 
 export default CreateRecipe;

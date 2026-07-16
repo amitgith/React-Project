@@ -1,7 +1,11 @@
 import React from "react";
 
 const CartItems = () => {
-  return <div>Discover Receipe</div>;
+  return <div>
+    <div>
+        <h></h>
+    </div>
+  </div>;
 };
 
 export default CartItems;
