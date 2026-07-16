@@ -2,7 +2,7 @@ import React from "react";
 
 const CreateRecipe = () => {
   return (
-    <div className=" bg-white p-5 rounded flex flex-col gap-5">
+    <div className=" bg-white p-5 rounded flex flex-col gap-5 h-screen">
       <div className="flex flex-col gap-1">
         <h2 className="text-2xl">Add New Recipe</h2>
         <p className="text-slate-400">
