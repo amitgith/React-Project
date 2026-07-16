@@ -1,14 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Navbar from "./components/Navbar";
 import CreateRecipe from "./components/CreateRecipe";
 import CartItems from "./components/CartItems";
+import { MyReceipe } from "./context/MyContext";
 
 const App = () => {
-  const [users, setUsers] = useState(() => {
-    return JSON.parse(localStorage.getItem("users")) || [];
-  });
-
-  const [updateData, setUpdateData] = useState(null);
+  let { users, setUsers, updateData, setUpdateData } = useContext(MyReceipe);
 
   const deleteRecipe = (id) => {
     let filterUser = users.filter((val, index) => {
@@ -23,9 +20,9 @@ const App = () => {
       <Navbar />
       <div className="flex justify-center gap-5">
         <CreateRecipe
-          setUsers={setUsers}
-          users={users}
-          updateData={updateData}
+          // setUsers={setUsers}
+          // users={users}
+          // updateData={updateData}
         />
         <div className="grid grid-cols-2 gap-2">
           {users.map((elem) => {
@@ -34,7 +31,7 @@ const App = () => {
                 key={elem.id}
                 users={elem}
                 deleteRecipe={deleteRecipe}
-                setUpdateData={setUpdateData}
+                // setUpdateData={setUpdateData}
               />
             );
           })}

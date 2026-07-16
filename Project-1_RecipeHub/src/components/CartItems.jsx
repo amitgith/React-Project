@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { MyReceipe } from "../context/MyContext";
 
-const CartItems = ({ users, deleteRecipe, ind, setUpdateData }) => {
+const CartItems = ({ users, deleteRecipe }) => {
+  let { setUpdateData } = useContext(MyReceipe);
   return (
     <div className="bg-white flex flex-col gap-4 p-3 w-240 h-screen rounded">
       <div className="flex flex-col gap-2">

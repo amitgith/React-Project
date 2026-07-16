@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { nanoid } from "nanoid";
-const CreateRecipe = ({ setUsers, users, updateData }) => {
+import { MyReceipe } from "../context/MyContext";
+const CreateRecipe = () => {
+  let { users, setUsers, updateData } = useContext(MyReceipe);
   let {
     register,
     handleSubmit,
