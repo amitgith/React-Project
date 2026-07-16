@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-const CreateRecipe = ({ setUsers, users }) => {
+import { nanoid } from "nanoid";
+const CreateRecipe = ({ setUsers, users, updateData }) => {
   let {
     register,
     handleSubmit,
@@ -8,12 +9,23 @@ const CreateRecipe = ({ setUsers, users }) => {
     formState: { errors },
   } = useForm({
     mode: "onChange",
+    defaultValues: updateData,
   });
 
   const formSubmit = (data) => {
-    let arr = [...users, data];
-    setUsers(arr);
-    localStorage.setItem("users", JSON.stringify(arr));
+    if (updateData) {
+      setUsers((prev) => {
+        return prev.map((val) => {
+          return val.id === updateData.id ? { ...data } : val;
+        });
+      });
+    } else {
+      let arr = [...users, { ...data, id: nanoid }];
+      console.log(arr);
+
+      setUsers(arr);
+      localStorage.setItem("users", JSON.stringify(arr));
+    }
     reset();
   };
 
@@ -128,8 +140,8 @@ const CreateRecipe = ({ setUsers, users }) => {
             {...register("description", {
               required: "Description is required",
               maxLength: {
-                value: 50,
-                message: "Minimun 50 characters required",
+                value: 200,
+                message: "Minimun 200 characters required",
               },
               minLength: {
                 value: 3,
