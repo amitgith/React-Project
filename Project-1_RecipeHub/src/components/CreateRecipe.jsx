@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-const CreateRecipe = ({ setUsers }) => {
+const CreateRecipe = ({ setUsers, users }) => {
   let {
     register,
     handleSubmit,
@@ -10,10 +10,10 @@ const CreateRecipe = ({ setUsers }) => {
     mode: "onChange",
   });
 
-
   const formSubmit = (data) => {
-    console.log(data);
-    setUsers((prev) => [...prev, data]);
+    let arr = [...users, data];
+    setUsers(arr);
+    localStorage.setItem("users", JSON.stringify(arr));
     reset();
   };
 
@@ -39,10 +39,6 @@ const CreateRecipe = ({ setUsers }) => {
                 value: 3,
                 message: "Maximum 3 characters required",
               },
-              pattern: {
-                value: /^\S+$/,
-                message: "Blank spaces not allowed",
-              },
             })}
             className="border border-slate-400 rounded p-2 outline-0"
             type="text"
@@ -57,10 +53,6 @@ const CreateRecipe = ({ setUsers }) => {
           <input
             {...register("chefname", {
               required: "Chef Name is required",
-              pattern: {
-                value: /^\S+$/,
-                message: "Blank spaces not allowed",
-              },
             })}
             className="border border-slate-400 rounded p-2 outline-0"
             type="text"
